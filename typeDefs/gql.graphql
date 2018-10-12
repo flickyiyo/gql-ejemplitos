@@ -1,0 +1,30 @@
+type Query {
+  allPokemons: [Pokemon!]!
+  getPokemon(pokemonType: [PokemonType], name: String): Pokemon!
+}
+
+enum PokemonType {
+  WATER
+  NORMAL
+  FIRE
+  GRASS
+  BUG
+  POISON
+  STEEL
+  ELECTRIC
+  FIGHT
+  GHOST
+  DARK
+  FAIRY
+  ROCK
+  GROUND
+  FLYING
+  PSYCHIC
+  ICE
+  DRAGON
+}
+
+type Pokemon {
+  pokemonType: [PokemonType!]!
+  name: String
+}
