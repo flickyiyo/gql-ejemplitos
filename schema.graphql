@@ -1,0 +1,52 @@
+type Query {
+  getAllPokemons: [Pokemon!]!
+  getPokemon(pokemonType: [PokemonType], name: String): Pokemon!
+  getIndicator(id: ID!): Indicator!
+}
+
+# type Mutation {
+#   addIndicator(nuevoIndicator: indicatorAddInput): indicator!
+# }
+
+# input indicatorAddInput {
+#   name: String!
+#   user_id: Int!
+# }
+
+enum PokemonType {
+  WATER
+  NORMAL
+  FIRE
+  GRASS
+  BUG
+  POISON
+  STEEL
+  ELECTRIC
+  FIGHT
+  GHOST
+  DARK
+  FAIRY
+  ROCK
+  GROUND
+  FLYING
+  PSYCHIC
+  ICE
+  DRAGON
+}
+
+type Pokemon {
+  pokemonType: [PokemonType!]!
+  name: String
+}
+
+type Indicator {
+  id: ID!
+  name: String!
+  data: [Data]!
+}
+
+type Data {
+  id: ID!
+  name: String!
+  indicator: Indicator!
+}
