@@ -27,8 +27,7 @@ const resolvers = {
     }
   },
   Data: {
-    indicator(parent, args, { database, user }, info) {
-      const { database } = context;
+    indicator(parent, args, { database }, info) {
       const indicatorId = parent.indicator;
       return database.getIndicatorById(indicatorId);
     }
